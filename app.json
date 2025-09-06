@@ -1,0 +1,17 @@
+{
+  "name": "VibeFit",
+  "displayName": "VibeFit - Fitness Tracker",
+  "description": "AI-powered fitness goal tracking app",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "icon": "./assets/icon.png",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#4AE54A"
+  },
+  "platforms": ["ios", "android", "web"],
+  "web": {
+    "favicon": "./assets/favicon.ico"
+  }
+}
