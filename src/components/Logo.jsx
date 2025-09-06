@@ -10,7 +10,7 @@ const Logo = ({ size = 'large' }) => {
   return (
     <div className="flex flex-col items-center">
       <img 
-        src="/VibeFit_transparent-.png" 
+        src="/src/assets/images/VibeFit_transparent-.png" 
         alt="VibeFit Logo" 
         style={{
           width: currentSize.width,
