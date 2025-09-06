@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -8,26 +8,21 @@
 
 html, body {
   height: 100%;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
+  color: #232D3B;
 }
 
 #root {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-}
-
-/* Mobile viewport optimization */
-@viewport {
-  width: device-width;
-  initial-scale: 1;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -36,99 +31,124 @@ html, body {
 
 ::-webkit-scrollbar-thumb {
   background: #4AE54A;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-/* Focus styles for accessibility */
+::-webkit-scrollbar-thumb:hover {
+  background: #2DD55B;
+}
+
+/* Focus styles */
 *:focus {
   outline: 2px solid #4AE54A;
   outline-offset: 2px;
 }
 
-/* Button focus styles */
-button:focus {
-  outline: 2px solid #4AE54A;
-  outline-offset: 2px;
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
 }
 
-/* Input focus styles */
-input:focus {
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4AE54A 0%, #2DD55B 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(74, 229, 74, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 229, 74, 0.4);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: #232D3B;
+  border: 2px solid #F5F5F5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: #4AE54A;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Input styles */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #232D3B;
+  margin-bottom: 8px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #F5F5F5;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #FFFFFF;
+  color: #232D3B;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
   outline: none;
   border-color: #4AE54A;
-  box-shadow: 0 0 0 3px rgba(74, 229, 74, 0.1);
+  box-shadow: 0 0 0 4px rgba(74, 229, 74, 0.1);
 }
 
-/* Smooth transitions for all interactive elements */
-button, input, a {
-  transition: all 0.2s ease-in-out;
+.input-field::placeholder {
+  color: #8B9CAD;
 }
 
-/* Typography classes */
-.text-light {
-  font-weight: 300;
+.input-error {
+  border-color: #FF5F5F;
 }
 
-.text-regular {
-  font-weight: 400;
+.input-error:focus {
+  border-color: #FF5F5F;
+  box-shadow: 0 0 0 4px rgba(255, 95, 95, 0.1);
 }
 
-.text-medium {
+.error-message {
+  color: #FF5F5F;
+  font-size: 14px;
+  margin-top: 6px;
   font-weight: 500;
-}
-
-.text-bold {
-  font-weight: 700;
-}
-
-.text-extrabold {
-  font-weight: 800;
-}
-
-/* Utility classes */
-.safe-area {
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-}
-
-/* Animation classes */
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 /* Loading spinner */
 .spinner {
   width: 20px;
   height: 20px;
-  border: 2px solid #F5F5F5;
-  border-top: 2px solid #4AE54A;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #FFFFFF;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -136,4 +156,168 @@ button, input, a {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+.mb-8 {
+  margin-bottom: 32px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-md {
+  max-width: 448px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.p-6 {
+  padding: 24px;
+}
+
+.p-8 {
+  padding: 32px;
+}
+
+.px-6 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.py-8 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.rounded-2xl {
+  border-radius: 16px;
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+.bg-gray-50 {
+  background-color: #F5F5F5;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.text-2xl {
+  font-size: 24px;
+}
+
+.text-3xl {
+  font-size: 30px;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.text-gray-600 {
+  color: #6B7280;
+}
+
+.text-primary {
+  color: #4AE54A;
+}
+
+.text-secondary {
+  color: #8951FF;
+}
+
+.hover\:text-primary:hover {
+  color: #4AE54A;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.transition-colors {
+  transition: color 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .p-8 {
+    padding: 24px;
+  }
+  
+  .px-6 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
