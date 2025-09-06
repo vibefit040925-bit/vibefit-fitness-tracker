@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Home, Dumbbell, Target, User, Menu, X, LogOut } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import Logo from '../Logo';
+import { getLogo } from '../../assets/images';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

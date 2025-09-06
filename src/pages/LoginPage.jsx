@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, Lock, Chrome } from 'lucide-react';
 import Logo from '../components/Logo';
 import InputField from '../components/InputField';
+import { getLogoForContext } from '../assets/images';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({

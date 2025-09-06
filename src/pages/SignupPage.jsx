@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { User, Mail, Lock, Chrome, Check } from 'lucide-react';
 import Logo from '../components/Logo';
 import InputField from '../components/InputField';
+import { getLogoForContext } from '../assets/images';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({

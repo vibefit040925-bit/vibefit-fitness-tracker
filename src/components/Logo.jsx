@@ -1,3 +1,5 @@
+import { getLogo } from '../assets/images';
+
 const Logo = ({ size = 'large' }) => {
   const sizes = {
     small: { width: 40, height: 40 },
@@ -10,7 +12,7 @@ const Logo = ({ size = 'large' }) => {
   return (
     <div className="flex flex-col items-center">
       <img 
-        src="/src/assets/images/VibeFit_transparent-.png" 
+        src={getLogo('transparent')}
         alt="VibeFit Logo" 
         style={{
           width: currentSize.width,
